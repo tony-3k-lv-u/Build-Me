@@ -36,7 +36,7 @@ git clone -b lineage-24.0 https://github.com/tony-3k-lv-u/android_kernel_xiaomi_
 source build/envsetup.sh
 
 # Select build target
-lunch lineage_marble-bp4a-userdebug
+lunch lineage_marble-cp2a-userdebug
 
 # Build ROM
 mka bacon

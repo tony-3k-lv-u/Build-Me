@@ -6,8 +6,8 @@ set -e
 repo init -u https://github.com/LineageOS/android.git -b lineage-24.0 --git-lfs --depth=1
 
 # Sync source
-/opt/crave/resync.sh
-
+/opt/crave/resync.sh &&
+rm -rf */xiaomi
 # Device tree
 git clone -b lineage-24.0 https://github.com/tony-3k-lv-u/android_device_xiaomi_marble device/xiaomi/marble
 

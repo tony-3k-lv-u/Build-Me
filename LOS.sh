@@ -6,7 +6,7 @@ set -e
 repo init -u https://github.com/LineageOS/android.git -b lineage-24.0 --git-lfs --depth=1
 
 # Sync source
-/opt/crave/resync.sh &&
+/opt/crave/resync.sh 
 
 # Cleaning 
 rm -rf device/xiaomi/marble
@@ -43,7 +43,7 @@ git clone -b lineage-24.0 https://github.com/tony-3k-lv-u/android_kernel_xiaomi_
 git clone -b lineage-24.0 https://github.com/tony-3k-lv-u/android_kernel_xiaomi_sm8450-modules kernel/xiaomi/sm8450-modules
 
 # Setup build environment
-source build/envsetup.sh &&
+source build/envsetup.sh 
 
 # Select build target
 lunch lineage_marble-cp2a-userdebug

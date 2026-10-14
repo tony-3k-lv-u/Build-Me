@@ -8,6 +8,11 @@ repo init -u https://github.com/LineageOS/android.git -b lineage-24.0 --git-lfs 
 # Sync source
 /opt/crave/resync.sh 
 
+# Apply Soong memory-fix
+cd build/soong
+git fetch https://github.com/yaap-17-stone/build_soong.git f9c27b0b9298f6eeee9a850346e0a646c3eaeb87
+git cherry-pick FETCH_HEAD
+cd ../..
 # Cleaning 
 
 rm -rf device/xiaomi/marble

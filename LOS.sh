@@ -40,13 +40,13 @@ git clone https://github.com/tony-3k-lv-u/proprietary_vendor_xiaomi_marble vendo
 git clone https://github.com/tony-3k-lv-u/android_hardware_xiaomi hardware/xiaomi
 
 # Kernel
-git clone https://github.com/tony-3k-lv-u/android_kernel_xiaomi_sm8450 kernel/xiaomi/sm8450
+git clone https://github.com/Pixelify-devices/android_kernel_xiaomi_sm8450 kernel/xiaomi/sm8450
 
 # Kernel device trees
-git clone https://github.com/tony-3k-lv-u/android_kernel_xiaomi_sm8450-devicetrees kernel/xiaomi/sm8450-devicetrees
+git clone https://github.com/Pixelify-devices/android_kernel_xiaomi_sm8450-devicetrees kernel/xiaomi/sm8450-devicetrees
 
 # Kernel modules
-git clone https://github.com/tony-3k-lv-u/android_kernel_xiaomi_sm8450-modules kernel/xiaomi/sm8450-modules
+git clone https://github.com/Pixelify-devices/android_kernel_xiaomi_sm8450-modules kernel/xiaomi/sm8450-modules
 
 # Setup build environment
 source build/envsetup.sh 

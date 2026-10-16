@@ -15,14 +15,14 @@ git cherry-pick FETCH_HEAD
 cd ../..
 # Cleaning 
 
-# rm -rf device/xiaomi/marble
-# rm -rf device/xiaomi/sm8450-common
-# rm -rf vendor/xiaomi/marble
-# rm -rf vendor/xiaomi/sm8450-common
-# rm -rf hardware/xiaomi
-# rm -rf kernel/xiaomi/sm8450
-# rm -rf kernel/xiaomi/sm8450-devicetrees
-# rm -rf kernel/xiaomi/sm8450-modules
+rm -rf device/xiaomi/marble
+rm -rf device/xiaomi/sm8450-common
+rm -rf vendor/xiaomi/marble
+rm -rf vendor/xiaomi/sm8450-common
+rm -rf hardware/xiaomi
+rm -rf kernel/xiaomi/sm8450
+rm -rf kernel/xiaomi/sm8450-devicetrees
+rm -rf kernel/xiaomi/sm8450-modules
 
 # Device tree
 git clone https://github.com/tony-3k-lv-u/android_device_xiaomi_marble device/xiaomi/marble

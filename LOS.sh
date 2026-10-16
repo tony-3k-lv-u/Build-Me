@@ -38,7 +38,9 @@ git clone https://github.com/tony-3k-lv-u/proprietary_vendor_xiaomi_marble vendo
 
 # Xiaomi hardware
 git clone https://github.com/tony-3k-lv-u/android_hardware_xiaomi hardware/xiaomi
-
+# Miui Camera and vendor
+git clone https://github.com/Pixelify-devices/device_xiaomi_miuicamera-marble.git device/xiaomi/miuicamera-marble
+git clone https://github.com/Pixelify-devices/vendor_xiaomi_miuicamera-marble.git vendor/xiaomi/miuicamera-marble
 # Kernel
 git clone https://github.com/Pixelify-devices/android_kernel_xiaomi_sm8450 kernel/xiaomi/sm8450
 

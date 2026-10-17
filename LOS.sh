@@ -6,18 +6,15 @@ set -e
 repo init -u https://github.com/LineageOS/android.git -b lineage-24.0 --git-lfs --depth=1
 
 # Sync source
-/opt/crave/resync.sh 
-
-# Apply Soong memory fix
+# Apply custom Soong memory fix
 SOONG_REPO="https://github.com/tony-3k-lv-u/android_build_soong.git"
 SOONG_COMMIT="60d16dbe2cb0c4b569202ef44359362e732884fa"
 
-git -C build/soong reset --hard
-git -C build/soong clean -fd
-repo sync -c --force-sync -d build/soong
-
 git -C build/soong fetch "$SOONG_REPO" "$SOONG_COMMIT"
-git -C build/soong cherry-pick --no-edit FETCH_HEAD
+
+if ! git -C build/soong merge-base --is-ancestor "$SOONG_COMMIT" HEAD; then
+    git -C build/soong cherry-pick "$SOONG_COMMIT" || exit 1
+fi
 # Cleaning 
 
 rm -rf device/xiaomi/marble

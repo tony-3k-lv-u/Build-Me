@@ -8,11 +8,16 @@ repo init -u https://github.com/LineageOS/android.git -b lineage-24.0 --git-lfs 
 # Sync source
 /opt/crave/resync.sh 
 
-# Apply Soong memory-fix
-cd build/soong
-git fetch https://github.com/yaap-17-stone/build_soong.git f9c27b0b9298f6eeee9a850346e0a646c3eaeb87
-git cherry-pick FETCH_HEAD
-cd ../..
+# Apply Soong memory fix
+SOONG_REPO="https://github.com/tony-3k-lv-u/android_build_soong.git"
+SOONG_COMMIT="60d16dbe2cb0c4b569202ef44359362e732884fa"
+
+git -C build/soong reset --hard
+git -C build/soong clean -fd
+repo sync -c --force-sync -d build/soong
+
+git -C build/soong fetch "$SOONG_REPO" "$SOONG_COMMIT"
+git -C build/soong cherry-pick --no-edit FETCH_HEAD
 # Cleaning 
 
 rm -rf device/xiaomi/marble
@@ -23,7 +28,8 @@ rm -rf hardware/xiaomi
 rm -rf kernel/xiaomi/sm8450
 rm -rf kernel/xiaomi/sm8450-devicetrees
 rm -rf kernel/xiaomi/sm8450-modules
-
+rm -rf device/xiaomi/miuicamera-marble
+rm -rf vendor/xiaomi/miuicamera-marble
 # Device tree
 git clone https://github.com/tony-3k-lv-u/android_device_xiaomi_marble device/xiaomi/marble
 
